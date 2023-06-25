@@ -1,10 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 "use client"
 
 import { Button } from "./ui/Button"
 import { cn } from "@/lib/utils"
 import { FC, useState } from 'react'
-import {signIn} from "next-auth/react"
+import { signIn } from "next-auth/react"
 import { Icons } from "./Icons"
+import { toast } from 'react-toastify'
 
 interface UserAuthFormProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
 
@@ -21,6 +23,7 @@ const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => {
             await signIn('google');
         } catch (error) {
             // Toast Notifciation
+            toast.error('There was an error to logging with Google');
         } finally {
             setIsLoading(false);
         }
