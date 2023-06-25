@@ -15,7 +15,7 @@ const Navbar = () => {
                 {/* Search Bar */}
 
                 {/* Authentication */}
-                <Link href={'/signin'} className={buttonVariants()}>Sign In</Link>
+                <Link href={'/sign-in'} className={buttonVariants()}>Sign In</Link>
             </div>  
         </div>
     )
